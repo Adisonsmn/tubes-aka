@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengecekan Plat Kendaraan Costume</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Pengecekan Plat Kendaraan Costume</h1>
+        <p>Perbandingan Algoritma: Iteratif vs Rekursif</p>
+    </header>
+
+    <div class="card input-section">
+        <div class="input-group">
+            <label>Total Plat (N)</label>
+            <input type="number" id="inputN" placeholder="e.g. 10000" value="10000" />
+        </div>
+        <div class="input-group">
+            <label>Target Costume (X)</label>
+            <input type="number" id="inputX" placeholder="e.g. 2" value="2" />
+        </div>
+        <button id="btnStart" onclick="startBenchmark()">Mulai Analisa</button>
+    </div>
+
+    <div id="loading" class="hidden">
+        <div class="spinner"></div>
+        <p>Sedang memproses data...</p>
+    </div>
+
+    <div id="results" class="hidden">
+        <div class="stats-grid">
+            <div class="card stat-card blue-border">
+                <h3>Waktu Iteratif</h3>
+                <div class="time-value" id="iterTime" style="color: #5c85f7;">0.00 ms</div>
+            </div>
+            <div class="card stat-card orange-border">
+                <h3>Waktu Rekursif</h3>
+                <div class="time-value" id="recTime" style="color: #f7a05c;">0.00 ms</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 style="margin-top:0">Grafik Performa</h3>
+            <canvas id="benchmarkChart"></canvas>
+        </div>
+
+        <div class="card">
+            <h3 style="margin-top:0">Sampel Plat Palindrom</h3>
+            <p style="color:#666; font-size:0.9rem; margin-bottom:15px">Menampilkan plat yang terdeteksi (Limit tampilan max: 20).</p>
+            <div class="plate-grid" id="plateGrid"></div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
